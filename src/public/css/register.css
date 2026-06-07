@@ -1,0 +1,123 @@
+main{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.regi{
+    width:680px;
+    height:1025.03px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-top:118px;
+    border:2px solid blue;
+    
+}
+
+.regi_body{
+    width:680px;
+    height:656px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-top:118px;
+    
+}
+
+
+.regi_body_title{
+    font-size:36px;
+    font-weight: bold;
+    display:flex;
+    justify-content:center;
+}
+
+.regi_body_user{
+    width:100%;
+    height:90.95px;
+}
+
+.regi_body_user_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi_body_user_input{
+    width:100%;
+    height:57.09px;
+}
+
+
+.regi_body_email{
+    width:100%;
+    height:90.95px;
+}
+
+.regi_body_email_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi_body_email_input{
+    width:100%;
+    height:57.09px;
+}
+
+
+.regi_body_pass{
+    width:100%;
+    height:90.95px;
+}
+
+.regi_body_pass_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi_body_pass_input{
+    width:100%;
+    height:57.09px;
+}
+
+
+.regi_body_confirm{
+    width:100%;
+    height:90.95px;
+}
+
+.regi_body_confirm_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi_body_confirm_input{
+    width:100%;
+    height:57.09px;
+}
+
+
+
+.regi_button{
+    width:100%;
+    height:62.65px;
+    font-size:26px;
+    font-weight: bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#FFFFFF;
+    background-color:#FF5555;
+}
+
+.regi_login{
+    width:257px;
+    height:53.29px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:212px;
+}
+
