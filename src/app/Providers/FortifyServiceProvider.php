@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Contracts\LoginResponse;
+use App\models\User;
+use Illuminate\Support\Facades\Hash;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -20,9 +23,13 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        return view('auth.profile');
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+            public function toResponse($request)
+            {
+                return redirect('/profile');
+            }
+        });
     }
-
     /**
      * Bootstrap any application services.
      */
@@ -50,6 +57,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
+
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string)$request->email;

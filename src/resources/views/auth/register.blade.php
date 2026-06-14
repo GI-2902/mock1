@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <form action="/profile" method="post" class="regi">
+    <form action="/register" method="post" class="regi">
         @csrf
         <div class="regi_body">
         

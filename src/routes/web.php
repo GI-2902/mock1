@@ -26,6 +26,8 @@ Route::post('/sell', [ItemController::class, 'store']);
 //Route::post(login)の記述は必要ない
 Route::middleware('auth')->group(function () {
     route::get('/', [ItemController::class, 'index']);
+    route::post('/', [ItemController::class, 'index']);
+    Route::view('/profile', 'auth.profile');
 });
 
-Route::post('/profile', [AuthController::class, 'user']);
+Route::view('/profile', 'auth.profile');
