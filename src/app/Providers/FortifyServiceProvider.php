@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Requests\LoginOkRequest;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -13,8 +14,11 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LoginResponse;
-use App\models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use App\Http\Requests\LoginRequest;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -60,8 +64,17 @@ class FortifyServiceProvider extends ServiceProvider
 
 
         RateLimiter::for('login', function (Request $request) {
+            Log::debug($request);
             $email = (string)$request->email;
             return Limit::perMinute(30)->by($email . $request->ip());
+        });
+
+        //fortifyのloginrequestを継承したformrequestでログイン情報のバリデーション
+        Fortify::authenticateUsing(function (LoginRequest $request) {
+
+            $user = User::where('email', $request->email)->first();
+
+            return $user;
         });
     }
 }

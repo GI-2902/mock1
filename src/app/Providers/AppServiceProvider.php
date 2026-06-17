@@ -16,21 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        /*Password::defaults(static fn() => Password::min(8)
-
-            ->rules([
-
-                function ($attribute, $value) {
-                    $pass = Auth::User()->password;
-
-                    return Hash::check($value, $pass);
-                },
-
-                function () {
-                    return 'FFFFFFFFFFFFFFFF';
-                }
-
-            ]));*/
+        //
     }
 
     /**
@@ -40,23 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*Password::defaults(function () {
-
-            return Password::min(8)
-
-                ->rules([
-
-                    function ($attribute, $value) {
-                        $pass = Auth::User()->password;
-
-                        return Hash::check($value, $pass);
-                    },
-
-                    function () {
-                        return 'FFFFFFFFFFFFFFFF';
-                    }
-
-                ]);
-        });*/
+        //これでfortifyのLoginRequestを継承できるようになる
+        $this->app->bind('Laravel\Fortify\Http\Requests\LoginRequest', \App\Http\Requests\LoginRequest::class);
     }
 }
