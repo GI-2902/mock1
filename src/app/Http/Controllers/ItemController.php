@@ -52,4 +52,10 @@ class ItemController extends Controller
         $items = Item::all();
         return redirect('/')->with(['items' => $items]);
     }
+
+    public function mypage()
+    {
+
+        return view('mypage');
+    }
 }

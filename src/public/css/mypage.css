@@ -1,0 +1,64 @@
+:hover{
+     border:1px solid red;
+}
+
+.items{
+    width:100%;
+    height:auto;
+}
+
+.items_top{
+    width:100%;
+    height:47px;
+    display:flex;
+    align-items:center;
+    justify-content: left;
+    margin-top:47px;
+    border-bottom:2px solid #5F5F5F;
+}
+
+.items_top_all{
+    width:155px;
+    height:40px;
+    margin-left:129px;
+    display:flex;
+    align-items:center;
+    justify-content:right;
+}
+
+.items_top_mylist{
+    width:155px;
+    height:40px;
+    margin-left:52px;
+    display:flex;
+    align-items:center;
+    justify-content:right;
+}
+
+.items_list{
+    width:auto;
+    height:320px;
+    margin-top:76.39px;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.items_list_box{
+    width:320px;
+    height:100%;
+    margin-left:69px;
+}
+
+.items_list_box_image{
+    width:320px;
+    height:290px;
+    background-image:url('');
+    background-color:aliceblue;
+    background-repeat: none;
+}
+
+.items_list_box_name{
+    width:320px;
+    height:30px;
+}
+

@@ -80,7 +80,7 @@
                 @csrf
                 <button type="submit" class="head_button_logout_button">ログアウト</button>
             </form>
-            <a href="" class="head_button_mypage">マイページ</a>
+            <a href="/mypage" class="head_button_mypage">マイページ</a>
             <a href="/sell" class="head_button_sell">出品</a>
             @endauth
         </div>

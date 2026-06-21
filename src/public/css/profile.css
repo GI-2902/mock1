@@ -1,3 +1,7 @@
+:hover{
+    border:2px solid red;
+}
+
 main{
     width:100%;
     height:100%;
@@ -6,101 +10,139 @@ main{
     align-items:center;
 }
 
-.regi{
-    width:680px;
-    height:1025.03px;
+.regi-u{
+    width:100%;
+    height:100%;
     display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    margin-top:118px;
+    justify-content:center;
+
     border:2px solid blue;
     
 }
 
-.regi_body{
+.regi-u_body{
     width:680px;
-    height:656px;
+    height:1102px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    margin-top:118px;
+    margin-top:59px;
     
 }
 
 
-.regi_body_title{
+.regi-u_body_title{
     font-size:36px;
     font-weight: bold;
     display:flex;
     justify-content:center;
+    
 }
 
-.regi_body_user{
+
+.regi-u_body_image{
+    width:369px;
+    height:150px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.regi-u_body_image_picture{
+    width:150px;
+    height:150px;
+}
+
+.regi-u_body_image_label{
+    margin-left:40px;
+    width:179px;
+    height:49px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid #FF5555;
+    border-radius:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#FF5555;
+}
+
+.regi-u_body_image_input{
+    display:none;
+    margin-left:40px;
+    width:179px;
+    height:49px;
+}
+
+
+.regi-u_body_user{
     width:100%;
     height:90.95px;
 }
 
-.regi_body_user_title{
+.regi-u_body_user_title{
     font-size:24px;
     font-weight:bold;
 }
 
-.regi_body_user_input{
+.regi-u_body_user_input{
     width:100%;
     height:57.09px;
+    padding:0px;
 }
 
 
-.regi_body_email{
+.regi-u_body_postcode{
     width:100%;
     height:90.95px;
 }
 
-.regi_body_email_title{
+.regi-u_body_postcode_title{
     font-size:24px;
     font-weight:bold;
 }
 
-.regi_body_email_input{
+.regi-u_body_postcode_input{
     width:100%;
     height:57.09px;
+    padding:0px;
 }
 
 
-.regi_body_pass{
+.regi-u_body_address{
     width:100%;
     height:90.95px;
 }
 
-.regi_body_pass_title{
+.regi-u_body_address_title{
     font-size:24px;
     font-weight:bold;
 }
 
-.regi_body_pass_input{
+.regi-u_body_address_input{
     width:100%;
     height:57.09px;
+    padding:0px;
 }
 
 
-.regi_body_confirm{
+.regi-u_body_building{
     width:100%;
     height:90.95px;
 }
 
-.regi_body_confirm_title{
+.regi-u_body_building_title{
     font-size:24px;
     font-weight:bold;
 }
 
-.regi_body_confirm_input{
+.regi-u_body_building_input{
     width:100%;
     height:57.09px;
+    padding:0px;
 }
 
-
-
-.regi_button{
+.regi-u_body_button{
     width:100%;
     height:62.65px;
     font-size:26px;
@@ -110,14 +152,5 @@ main{
     align-items:center;
     color:#FFFFFF;
     background-color:#FF5555;
-}
-
-.regi_login{
-    width:257px;
-    height:53.29px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-left:212px;
 }
 

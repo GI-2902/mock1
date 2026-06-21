@@ -14,18 +14,47 @@
             <div class="regi_body_user">
                 <div class="regi_body_user_title">ユーザ名</div>
                 <input type="text" name="name" class="regi_body_user_input" value="{{old('name')}}"/>
+                @if($errors->has('name'))
+                <ul class="error">
+                    @foreach($errors->get('name') as $error)
+                    <li>{{$error}}</li>
+                    @endforeach    
+                </ul>
+                @endif
             </div>
             <div class="regi_body_email">
                 <div class="regi_body_email_title">メールアドレス</div>
                 <input type="email" name="email" class="regi_body_email_input" value="{{old('email')}}"/>
+                @if($errors->has('email'))
+                <ul class="error">
+                    @foreach($errors->get('email') as $error)
+                    <li>{{$error}}</li>
+                    @endforeach    
+                </ul>
+                @endif
             </div>
             <div class="regi_body_pass">
                 <div class="regi_body_pass_title">パスワード</div>
                 <input type="password" name="password" class="regi_body_pass_input"/>
-            </div>
+                @if($errors->has('password'))
+                <ul class="error">
+                    @foreach($errors->get('password') as $error)
+                    <li>{{$error}}</li>
+                    @endforeach    
+                </ul>
+                @endif
+            </div>     
             <div class="regi_body_confirm">
                 <div class="regi_body_confirm_title">確認用パスワード</div>
                 <input type="password" name="password_confirmation" class="regi_body_confirm_input"/>
+                 
+                @if($errors->has('password_confirmation'))
+                <ul class="error">
+                    @foreach($errors->get('password_confirmation') as $error)
+                    <li>{{$error}}</li>
+                    @endforeach    
+                </ul>
+                @endif
             </div>
         </div>
 

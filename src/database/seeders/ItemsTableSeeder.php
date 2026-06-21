@@ -16,6 +16,7 @@ class ItemsTableSeeder extends Seeder
     {
         $param = [
             'item_id' => '1',
+            'id' => '1',
             'item_name' => 'Galaxy Doragon',
             'item_image' => 'Galaxy.jpg',
             'brand' => 'gutti',
@@ -28,6 +29,7 @@ class ItemsTableSeeder extends Seeder
 
         $param = [
             'item_id' => '2',
+            'id' => '2',
             'item_name' => 'Neo-Galaxy Doragon',
             'item_image' => 'Neo-G.png',
             'brand' => 'gutties',
