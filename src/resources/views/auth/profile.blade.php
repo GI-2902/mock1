@@ -13,6 +13,7 @@
             <div class="regi-u_body_title">プロフィール設定</div>
 
             <div class="regi-u_body_image">
+                
                 <img class="regi-u_body_image_picture" id="0"></img>
                 <label for="1" class="regi-u_body_image_label">画像を選択する
                     <input id="1" type="file" name="user_image" class="regi-u_body_image_input" value="{{old('user_image')}}"/>

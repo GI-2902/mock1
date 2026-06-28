@@ -29,7 +29,8 @@
                     </img>
 
                     <div class="items_list_box_name" >
-                        <a href="" class=""  id="atag">{{$item->item_name}}</a>
+                    
+                        <a href="/item/{{$item->id}}" class=""  id="atag">{{$item->item_name}}</a>
                     </div>
                 </div>
             @endforeach

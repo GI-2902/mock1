@@ -4,16 +4,28 @@
     <link rel="stylesheet" href="{{asset('/css/mypage.css')}}">
 @endsection
 
-<body>
-    @section('content')
-        <div class="items">
+@section('content')
+
+    <div class="top">
+    
+    
+
+        <div class="top_user">
+        
+            <img class="user_image" src="{{asset('/storage/'.$user->user_image)}}"></img>
+            <div class="user_name">{{$user->name}}</div>
+            <a class="user_edit" href="/mypage/profile">プロフィールを編集</a>
+        
+        </div>
+
+        <div class="top_items">
             
             <div class="items_top">
                 <div class="items_top_all">
-                    おすすめ
+                    出品した商品
                 </div>
                 <div class="items_top_mylist">
-                    マイリスト
+                    購入した商品
                 </div>
             </div>
 
@@ -36,6 +48,6 @@
             </div>
          
         </div>
-    @endsection
-</body>
+    </div>
+@endsection
 </html>

@@ -1,0 +1,149 @@
+:hover{
+    border:2px solid red;
+}
+
+
+.regi-u{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+
+    border:2px solid blue;
+    
+}
+
+.regi-u_body{
+    width:680px;
+    height:1102px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-top:59px;
+    
+}
+
+
+.regi-u_body_title{
+    font-size:36px;
+    font-weight: bold;
+    display:flex;
+    justify-content:center;
+    
+}
+
+
+.regi-u_body_image{
+    width:369px;
+    height:150px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.regi-u_body_image_picture{
+    width:150px;
+    height:150px;
+}
+
+.regi-u_body_image_label{
+    margin-left:40px;
+    width:179px;
+    height:49px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid #FF5555;
+    border-radius:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#FF5555;
+}
+
+.regi-u_body_image_input{
+    display:none;
+    margin-left:40px;
+    width:179px;
+    height:49px;
+}
+
+
+.regi-u_body_user{
+    width:100%;
+    height:90.95px;
+}
+
+.regi-u_body_user_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi-u_body_user_input{
+    width:100%;
+    height:57.09px;
+    padding:0px;
+}
+
+
+.regi-u_body_postcode{
+    width:100%;
+    height:90.95px;
+}
+
+.regi-u_body_postcode_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi-u_body_postcode_input{
+    width:100%;
+    height:57.09px;
+    padding:0px;
+}
+
+
+.regi-u_body_address{
+    width:100%;
+    height:90.95px;
+}
+
+.regi-u_body_address_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi-u_body_address_input{
+    width:100%;
+    height:57.09px;
+    padding:0px;
+}
+
+
+.regi-u_body_building{
+    width:100%;
+    height:90.95px;
+}
+
+.regi-u_body_building_title{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.regi-u_body_building_input{
+    width:100%;
+    height:57.09px;
+    padding:0px;
+}
+
+.regi-u_body_button{
+    width:100%;
+    height:62.65px;
+    font-size:26px;
+    font-weight: bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#FFFFFF;
+    background-color:#FF5555;
+}
+

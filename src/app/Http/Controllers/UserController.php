@@ -13,20 +13,38 @@ class UserController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
 
-        $user->update([
-            'name' => $request->name,
-            'user_image' => $request->user_image,
-            'postcode' => $request->postcode,
-            'address' => $request->address,
-            'building' => $request->building,
-        ]);
         //storageに画像保存
-        $file_name = $request->file('user_image')->getClientOriginalName();
+        if ($request->file('user_image') == null) {
+            $user->update([
+                'name' => $request->name,
+                'postcode' => $request->postcode,
+                'address' => $request->address,
+                'building' => $request->building,
+            ]);
+        } else {
 
-        $request->file('user_image')->storeAs('public', $file_name);
+            $file_name = $request->file('user_image')->getClientOriginalName();
 
-        //dd($user);
+            $user->update([
+                'name' => $request->name,
+                'user_image' => $file_name,
+                'postcode' => $request->postcode,
+                'address' => $request->address,
+                'building' => $request->building,
+            ]);
+
+            $request->file('user_image')->storeAs('public', $file_name);
+        }
+
+        //dd($user->user_image);
         $items = Item::All();
         return view('index', ['items' => $items]);
+    }
+
+    public function index()
+    {
+        $user = Auth::user();
+        //dd($user);
+        return view('profile-edit', ['user' => $user]);
     }
 }

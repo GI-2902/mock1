@@ -7,7 +7,7 @@
 @section('content')
         <div class="items">
 
-            <form action="/sell" class="items_form" method="post" onSubmit="return false" enctype="multipart/form-data">
+            <form action="/sell" class="items_form" method="post" onSubmit="return false" id="fm" enctype="multipart/form-data">
                 @csrf
             
                <div class="items_form_title">商品の出品</div>
@@ -15,27 +15,24 @@
                     <div class="items_form_image_title">商品画像</div>
                     <div class="items_form_image_form">
                         <input name="item_image" type="file" class="items_form_image_form_picture" accept=".jpg,.png,.jpeg" id="01" required />
-                        <label type="button"  for="01" class="items_form_image_form_upload">画像を選択する</label>
-                        <img class="items_form_image_form_view"/>
+                        <label for="01" class="items_form_image_form_upload">画像を選択する</label>
+                        <img class="items_form_image_form_view" id="00"/>
                         <script>
-                            var pic = document.querySelector('.items_form_image_form_picture');
-                                                        
-                            var view = document.querySelector('.items_form_image_form_view');
+                            var view = document.getElementById('00');
+                            var pic = document.getElementById('01');                          
                             pic.addEventListener('change',(e)=>{
                                 var file = e.target.files[0];
-                                var image = pic.files[0].name;
-                                
-                                console.log('name',image);
-                                console.log(file);
-                                var fr = new FileReader();
-                                fr.readAsDataURL(file);
-                                
-                                fr.addEventListener('load',(e)=>{
-                                
-                                    view.src="{{asset('storage/bag.jpg')}}" ;
+                                //console.log(file);
 
-                                })
-                            
+                                var fr = new FileReader();
+                                //readAsDataURLでDataURL形式でファイルのURLの情報を読み込みオブジェクトのrederに代入する
+                                fr.readAsDataURL(file);
+
+                                //読み込みが完了したらsrcに代入する
+                                fr.addEventListener('load',(e)=>{
+                                    //console.log(e);                                                                   
+                                    view.src= e.srcElement.result;
+                                })                       
                             })
                         </script>
                     </div>             
@@ -114,9 +111,8 @@
                 }
         }
 
-        btn.addEventListener('click',function(){
-            // form を動的に生成
-            var form = document.querySelector('form');
+        btn.addEventListener('click',function(e){
+             
             var description = document.querySelector('textarea').value; 
 
             var i;
@@ -129,23 +125,49 @@
             }
             //cate[]のnullを削除
             var category = cate.filter(Boolean);
+
+            // form を動的に生成
+            var form = document.getElementById('fm');
+
+            console.log('form',form);
+
+            form.addEventListener('formdata',function(e){
+
+                //formdataイベントはキャンセル不可
+                //e.preventDefault();
+                var fd = e.formData;
+                fd.set('category', category); 
+                fd.set('description', description);
+                //new FormData()を見るにはArray.from()が必要
+                //console.log('form_data',Array.from(fd));               
+            });
+
+            form.submit();
             
+        });
+
+
+/*
             form.addEventListener('formdata', (e) => {
-                e.preventDefault();
+
+                 console.log('e',e);
 
                 //eのformDataを基にformを作成している
                 var fd = e.formData;
+                
                 fd.append('category', category); 
-                fd.append('description', description);                 
+                fd.append('description', description);
+
+
+                console.log('fd',fd);
+
+               // e.preventDefault();
            });
 
             //fdの中身を送信前に確認
-            //console.log(...fd.entries());
-            form.submit();
             
-        
-        });
-
+            //e.preventDefault();
+            //form.submit();*/
     
     </script>
 @endsection

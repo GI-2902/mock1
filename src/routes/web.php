@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [ItemController::class, 'index']);
 
-Route::post('/', [UserController::class, 'store']);
-
-Route::get('/sell', [ItemController::class, 'register']);
-
-Route::post('/sell', [ItemController::class, 'store']);
 
 //Route::post(login)の記述は必要ない
 Route::middleware('auth')->group(function () {
@@ -30,6 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/', [UserController::class, 'store']);
     Route::view('/profile', 'auth.profile');
     Route::get('/mypage', [ItemController::class, 'mypage']);
+    Route::get('/mypage/profile', [UserController::class, 'index']);
+    Route::post('/{tab=mylist}', [ItemController::class, 'search']);
+    Route::get('/item/{item_id}', [ItemController::class, 'info']);
+    Route::get('/item/{item_id}/like', [LikeController::class, 'like']);
+    Route::post('/sell', [ItemController::class, 'store']);
+    Route::get('/sell', [ItemController::class, 'register']);
 });
 
 Route::view('/profile', 'auth.profile');

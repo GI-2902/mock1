@@ -33,7 +33,7 @@
                                 console.log(text);
 
                                 $.ajax({
-                                    url:'/',
+                                    url:'/{tab=mylist}',
                                     headers: {
                                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                                     },
@@ -48,18 +48,22 @@
                                     $.each(data,function(index,item){
                                         
                                         var name = item.item_name;
+                                        var image = item.item_image;
+                                        console.log(image);
 
                                         html = `
+                                                
                                                 <div class="items_list_box">
                 
-                                                    <div class="items_list_box_image" >
-                    
-                                                    </div>
+                                                    <img class="items_list_box_image"  src="{{asset('storage/${image}')}}"> 
+                                                    </img>
 
                                                     <div class="items_list_box_name" >
-                                                        <a href="" class=""  id="atag">${name}</a>
+                                                        <a href="/item" class=""  id="atag">${name}</a>
                                                     </div>
+                                                
                                                 </div>
+                                                
                                              `
                                         $('.items_list').append(html);
                                     })

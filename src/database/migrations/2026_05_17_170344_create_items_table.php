@@ -14,8 +14,8 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id('item_id');
-            $table->foreignId('id')->constrained('users');
+            $table->id('id');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('item_name');
             $table->string('item_image');
             $table->string('brand');

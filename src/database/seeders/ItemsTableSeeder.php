@@ -15,11 +15,11 @@ class ItemsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'item_id' => '1',
             'id' => '1',
+            'user_id' => '1',
             'item_name' => 'Galaxy Doragon',
             'item_image' => 'Galaxy.jpg',
-            'brand' => 'gutti',
+            'brand' => 'Kaitoooo',
             'price' => '25000',
             'category' => 'Doragon',
             'status' => 'GOD',
@@ -28,8 +28,8 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->insert($param);
 
         $param = [
-            'item_id' => '2',
             'id' => '2',
+            'user_id' => '2',
             'item_name' => 'Neo-Galaxy Doragon',
             'item_image' => 'Neo-G.png',
             'brand' => 'gutties',
